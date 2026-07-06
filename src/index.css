@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'New Spirit';
+  font-weight: 600;
+  src: local('New Spirit Semi Bold'), local('NewSpirit-SemiBold'), local('New Spirit');
+}
+
+@font-face {
+  font-family: 'New Spirit Medium';
+  font-weight: 500;
+  src: local('New Spirit Medium'), local('NewSpirit-Medium'), local('New Spirit');
+}
+
+@font-face {
+  font-family: 'New Spirit Light';
+  font-weight: 300;
+  src: local('New Spirit Light'), local('NewSpirit-Light'), local('New Spirit');
+}
+
+@theme {
+  --font-sans: "New Spirit Light", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "New Spirit", "Playfair Display", Georgia, serif;
+  --font-serif-medium: "New Spirit Medium", "New Spirit", "Playfair Display", Georgia, serif;
+  --font-mono: "Outfit", "Inter", sans-serif;
+  --font-typewriter: "Outfit", "Inter", sans-serif;
+
+  --color-burnt-earth: #b85028;
+  --color-burnt-earth-dark: #8c3513;
+  --color-charcoal: #1c1c1c;
+  --color-charcoal-dark: #0f0f0f;
+  --color-charcoal-light: #2c2c2c;
+  --color-old-leather: #5c3c24;
+  --color-old-leather-dark: #3a2211;
+  --color-ironstone: #3d2314;
+  --color-weathered-steel: #5e6163;
+  --color-parchment: #faf7f0;
+  --color-parchment-dark: #eae3d2;
+}
+
+/* Custom scrollbar to look weathered and tactile */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #5c3c24;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b85028;
+}
+
+/* Ambient Outbacks Style Overrides */
+body {
+  background-color: #0f0f0f;
+  color: #faf7f0;
+  font-family: var(--font-sans);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* High-end debossed/letterpress effect */
+.text-debossed {
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.1), -1px -1px 0px rgba(0, 0, 0, 0.8);
+}
+
+/* Aged paper effect for journal panel */
+.bg-aged-paper {
+  background-color: #faf7f0;
+  background-image: radial-gradient(#eae3d2 1px, transparent 0), radial-gradient(#eae3d2 1px, transparent 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Selection overlay for custom maps */
+.map-canvas-container {
+  cursor: grab;
+}
+.map-canvas-container:active {
+  cursor: grabbing;
+}
+
+/* Brand SVG Logo color overrides */
+.logo-burnt-earth {
+  filter: invert(39%) sepia(68%) saturate(1354%) hue-rotate(341deg) brightness(90%) contrast(85%);
+}
+
+.logo-parchment {
+  filter: invert(99%) sepia(4%) saturate(884%) hue-rotate(321deg) brightness(115%) contrast(96%);
+}
+
+.logo-white {
+  filter: brightness(0) invert(1);
+}
+
+/* Prehistoric Eromanga Sea Overlay animations */
+.sea-ripple {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(15, 23, 42, 0.15) 100%);
+  mix-blend-mode: color-burn;
+  opacity: 0.8;
+  z-index: 10;
+}
+
+/* Custom underwater particulate drift */
+@keyframes underwater-drift {
+  0% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) translateX(10px) rotate(180deg); }
+  100% { transform: translateY(0px) translateX(0px) rotate(360deg); }
+}
+
+.underwater-particle {
+  animation: underwater-drift 8s ease-in-out infinite alternate;
+}
+

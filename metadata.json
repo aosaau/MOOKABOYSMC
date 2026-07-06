@@ -1,0 +1,6 @@
+{
+  "name": "Mooka Boys Mining Co.",
+  "description": "An interactive, map-driven journey through Andamooka's opal fields, preserving Australia's mining heritage through stories, provenance, and luxury frontier gear.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
